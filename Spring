@@ -1,2 +1,16 @@
 Intro to Spring : 
 
+Wiring :
+> At the heart of Spring is DI. Spring achieves this by managing/providing the objects to other objects during runtime. This is known as wiring.
+
+Spring container :
+> Spring containter is the place where the application objects hangout. This is the world objects live in from cradle to grave (ie, new to finalize())
+> The basic containers that we use more frequent are BeanFactory and ApplicationContext interfaces. The earlier one, as the name says, is built on Factory design pattern. (A Factory class is made whose main responsibility to to create beans.)
+  But unlike the regular Factory pattern class which dispenses one type of Object, a Spring BeanFactory is capable of handling different types of objects. This BeanFactory does more than creating and dispensing object. It can also build the associations between the objects as the container has all the required objects in it. This, the objects dispensed by the BeanFactory are fully matured/awared.
+  The basic class that implements BeanFactory is XMLBeanFactory. This takes in the Resource where the configuration/association of the objects is defined.
+  Beans are lazily loaded into bean factory. They are instantiated only when an refrence is requested through getBean(id) call.
+>The ApplicationContext on other hand, is an extension to BeanFactory ( ApplicationContext extends BeanFactory). Built on base as BeanFactory, this interface offers much more than creating objects, like creating text messages, notifying the events to registered objects, loading system resources like images etc.
+  Unlike BeanFactory, AContext is smart enough to identify anf instantiate Singleton objects so the the application need not wait for objects during creation.
+
+
+  
